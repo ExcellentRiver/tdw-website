@@ -1,618 +1,708 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#13271f">
-<meta name="description" content="The Disciples' Walk — walking in their footsteps, understanding their hearts, sharing the Gospel.">
-<title>The Disciples' Walk | #TDW</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142c22">
+  <title>The Disciples' Walk | #TDW</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --dark: #12271f;
-  --deep: #0c1d17;
-  --gold: #c6a56b;
-  --cream: #f8f5ed;
-  --ink: #203027;
-  --muted: #68736c;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: 'DM Sans', Arial, sans-serif;
-  color: var(--ink);
-  background: var(--cream);
-}
-a { color: inherit; text-decoration: none; }
-button { font: inherit; cursor: pointer; }
-.wrap { max-width: 1150px; margin: auto; padding: 0 26px; }
-h1,h2,h3 { font-family: 'Playfair Display', Georgia, serif; margin-top: 0; }
-h1 {
-  font-size: clamp(54px,7vw,100px);
-  line-height: 1.07;
-  letter-spacing: -.045em;
-  margin: 23px 0;
-}
-h1 em { color: #e3c38d; font-weight: 400; }
-h2 { font-size: clamp(35px,4vw,55px); line-height: 1.17; }
-h3 { font-size: 25px; }
-.nav {
-  position: absolute; top: 0; left: 0; right: 0;
-  z-index: 5; color: white;
-  border-bottom: 1px solid #ffffff38;
-}
-.navin {
-  display: flex; justify-content: space-between;
-  align-items: center; min-height: 82px; gap: 20px;
-}
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 23px; font-weight: 700;
-}
-.logo span { color: var(--gold); }
-.navlinks {
-  display: flex; align-items: center;
-  gap: 25px; font-size: 13px; font-weight: 600;
-}
-.navlinks a:hover { color: var(--gold); }
-.navcta { border: 1px solid var(--gold); padding: 12px 19px; }
-.mobile-menu { display: none; }
-.hero {
-  min-height: 760px; color: white;
-  display: flex; align-items: center;
-  background:
-    linear-gradient(90deg,rgba(8,25,19,.93),rgba(8,25,19,.65),rgba(8,25,19,.25)),
-    url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85') center/cover;
-}
-.hero .wrap {
-  width: 100%; padding-top: 125px; padding-bottom: 95px;
-}
-.eyebrow {
-  color: var(--gold); font-size: 12px; font-weight: 700;
-  letter-spacing: .24em; text-transform: uppercase;
-}
-.lead { font-size: 19px; line-height: 1.8; color: #e1e8df; }
-.actions { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 34px; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 16px 25px; border-radius: 3px;
-  border: 1px solid transparent;
-  font-size: 13px; font-weight: 700;
-  letter-spacing: .06em; text-transform: uppercase;
-  transition: transform .2s;
-}
-.btn:hover { transform: translateY(-2px); }
-.btn.gold { background: var(--gold); color: var(--dark); }
-.btn.outline { border-color: white; color: white; }
-.btn.dark { background: var(--dark); color: white; }
-.herofoot {
-  margin-top: 70px; font-size: 12px;
-  letter-spacing: .15em; color: #d6e0d7;
-}
-.section { padding: 105px 0; }
-.center { text-align: center; }
-.sectionintro { max-width: 700px; margin: 0 auto 50px; }
-.sectionintro p,.step p,.join p,.support p {
-  color: var(--muted); line-height: 1.8;
-}
-.stats { background: var(--dark); color: white; padding: 65px 0; }
-.statshead {
-  display: flex; justify-content: space-between;
-  align-items: center; gap: 20px;
-  flex-wrap: wrap; margin-bottom: 30px;
-}
-.statshead h2 { font-size: 37px; margin: 8px 0 0; }
-.live {
-  font-size: 12px; border: 1px solid #64806c;
-  border-radius: 30px; padding: 10px 15px; color: #dce7dc;
-}
-.dot {
-  display: inline-block; background: #b7d19d;
-  width: 7px; height: 7px; border-radius: 50%;
-  margin-right: 8px;
-}
-.statgrid {
-  display: grid;
-  grid-template-columns: repeat(5,minmax(0,1fr));
-  gap: 12px;
-}
-.stat {
-  border: 1px solid #496056;
-  padding: 25px 14px; background: #1a3529;
-  min-width: 0;
-}
-.stat strong {
-  display: block; font-family: 'Playfair Display',serif;
-  font-size: clamp(32px,4vw,53px); font-weight: 500;
-  color: #e6c58b;
-}
-.stat small {
-  display: block; color: #d7e1d8;
-  font-size: 11px; letter-spacing: .05em;
-  text-transform: uppercase; margin-top: 8px;
-  line-height: 1.5;
-}
-.note {
-  font-size: 12px; color: #afc2b4;
-  margin-top: 22px; line-height: 1.6;
-}
-.steps {
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 25px;
-}
-.step {
-  padding: 38px 30px; background: white;
-  border: 1px solid #e7e5db;
-}
-.step .number {
-  color: #b28b4e;
-  font-family: 'Playfair Display',serif; font-size: 40px;
-}
-.step h3 { margin: 20px 0 13px; }
-.step p { font-size: 14px; }
-.quote {
-  background: #eae5d8; padding: 90px 0; text-align: center;
-}
-.quote blockquote {
-  font-family: 'Playfair Display',serif;
-  font-size: clamp(25px,3.4vw,42px);
-  max-width: 860px; margin: 20px auto; line-height: 1.5;
-}
-.quote cite {
-  font-style: normal; font-size: 12px; letter-spacing: .18em;
-}
-.join {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 70px; align-items: center;
-}
-.joinpanel {
-  padding: 42px; background: white;
-  border: 1px solid #e6e2d8;
-  box-shadow: 0 15px 55px #16251a0c;
-}
-.joinpanel .btn { width: 100%; margin-top: 20px; }
-.hint {
-  font-size: 12px; color: #778079;
-  line-height: 1.6; margin-top: 15px;
-}
-.reportlink {
-  display: inline-block; margin-top: 20px;
-  color: #234b36; text-decoration: underline; font-size: 14px;
-}
-.pill {
-  display: inline-block; background: #f0e9da;
-  padding: 9px 14px; border-radius: 30px;
-  font-size: 12px; color: #765c35;
-}
-.support { background: #e9eee8; }
-.supportgrid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 45px; align-items: center;
-}
-.tag {
-  font-size: clamp(56px,8vw,110px);
-  font-family: 'Playfair Display',serif;
-  color: #315642; font-weight: 700;
-}
-.footer {
-  background: var(--deep); color: #e9eee8; padding: 48px 0;
-}
-.footerin {
-  display: flex; justify-content: space-between;
-  gap: 30px; flex-wrap: wrap;
-}
-.footer p {
-  color: #b9c6bd; font-size: 12px; line-height: 1.8;
-}
-.footlinks { display: flex; gap: 20px; font-size: 12px; }
-@media(max-width:1000px) {
-  .statgrid { grid-template-columns: repeat(3,minmax(0,1fr)); }
-}
-@media(max-width:800px) {
-  .navlinks { display: none; }
-  .mobile-menu {
-    display: inline-block; border: 1px solid #ffffff80;
-    color: white; padding: 10px 12px; background: transparent;
-  }
-  .navlinks.open {
-    display: flex; position: absolute; top: 82px;
-    left: 0; right: 0; background: #13271f;
-    flex-direction: column; padding: 25px;
-  }
-  .statgrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .steps,.join,.supportgrid { grid-template-columns: 1fr; }
-  .section { padding: 75px 0; }
-  .joinpanel { padding: 26px; }
-  .hero { min-height: 720px; }
-}
-@media(max-width:450px) {
-  .stat strong { font-size: 39px; }
-  h1 { font-size: 54px; }
-}
-</style>
+  <style>
+    :root {
+      --green: #142c22;
+      --dark: #0c1e16;
+      --gold: #d2ad70;
+      --cream: #faf8f2;
+      --text: #25382d;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+    }
+
+    .navbar {
+      background: var(--dark);
+      color: white;
+      padding: 23px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .logo span { color: var(--gold); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      background:
+        linear-gradient(90deg,
+          rgba(10,30,21,.96),
+          rgba(10,30,21,.68)),
+        url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+      padding: 135px 0 145px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(55px, 8vw, 105px);
+      line-height: 1.07;
+      letter-spacing: -2px;
+      margin: 24px 0;
+    }
+
+    h1 em {
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.9;
+      color: #e1e8e0;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid transparent;
+      padding: 16px 25px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-outline {
+      border-color: white;
+      color: white;
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: white;
+    }
+
+    .stats {
+      background: var(--green);
+      color: white;
+      padding: 75px 0;
+    }
+
+    .stats h2 {
+      font-size: clamp(34px, 4vw, 48px);
+      margin: 12px 0 35px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      background: #1d3a2c;
+      border: 1px solid #476251;
+      padding: 27px 15px;
+      min-width: 0;
+    }
+
+    .stat-number {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 55px);
+      color: #e5c58b;
+      overflow-wrap: anywhere;
+    }
+
+    .stat-label {
+      display: block;
+      margin-top: 12px;
+      font-size: 11px;
+      line-height: 1.6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #d5e0d6;
+    }
+
+    .status {
+      color: #c3d2c6;
+      font-size: 12px;
+      margin-top: 25px;
+    }
+
+    section.content {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading h2,
+    .join h2 {
+      font-size: clamp(36px, 5vw, 55px);
+    }
+
+    .section-heading p,
+    .step p,
+    .join p {
+      color: #657267;
+      line-height: 1.85;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      background: white;
+      padding: 35px;
+      border: 1px solid #e8e6df;
+    }
+
+    .step-number {
+      color: #b28e56;
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+    }
+
+    .step h3 { font-size: 25px; }
+
+    .verse {
+      background: #ece7dc;
+      text-align: center;
+      padding: 85px 20px;
+    }
+
+    .verse blockquote {
+      max-width: 850px;
+      margin: 20px auto;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.5;
+    }
+
+    .join-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .join-card {
+      background: white;
+      padding: 40px;
+      border: 1px solid #e5e2d9;
+    }
+
+    .join-card h3 { font-size: 28px; }
+
+    .join-card .btn {
+      display: block;
+      text-align: center;
+      margin: 22px 0;
+    }
+
+    .report-link {
+      color: #24533a;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .support {
+      background: #e9eee7;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 50px 0;
+    }
+
+    footer p {
+      color: #b5c4b8;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1000px) {
+      .stats-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 750px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps, .join-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding: 90px 0; }
+
+      section.content { padding: 70px 0; }
+
+      .join-card { padding: 25px; }
+    }
+
+    @media (max-width: 380px) {
+      .stat-number { font-size: 35px; }
+      .stat-card { padding: 20px 10px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="wrap navin">
-    <a class="logo" href="#home">TDW<span>✦</span></a>
-    <button class="mobile-menu" id="menu" aria-expanded="false">Menu ☰</button>
-    <nav class="navlinks" id="navlinks">
-      <a href="#about">Our Purpose</a>
-      <a href="#progress">Live Progress</a>
-      <a href="#how">The Challenge</a>
-      <a href="#support">Support #TDW</a>
-      <a class="navcta" href="#join">Join the Walk ↗</a>
-    </nav>
-  </div>
-</header>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">TDW<span>✦</span></a>
 
-<main>
-
-<section class="hero" id="home">
-  <div class="wrap">
-    <div class="eyebrow">A journey of faith, courage & connection</div>
-    <h1>The Disciples’<br><em>Walk.</em></h1>
-    <p class="lead">
-      Walking in their footsteps.<br>
-      Understanding their hearts.<br>
-      Sharing the Gospel.
-    </p>
-    <div class="actions">
-      <a class="btn gold" href="#join">Join the Challenge ↗</a>
-      <a class="btn outline" href="#about">Discover the Mission</a>
+      <nav>
+        <a href="#about">Our Purpose</a>
+        <a href="#progress">Live Progress</a>
+        <a href="#join">Join the Walk</a>
+      </nav>
     </div>
-    <div class="herofoot">
-      One conversation at a time ✦ #TheDisciplesWalk
-    </div>
-  </div>
-</section>
+  </header>
 
-<section class="stats" id="progress">
-  <div class="wrap">
-    <div class="statshead">
-      <div>
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow">
+          A journey of faith, courage & connection
+        </div>
+
+        <h1>
+          The Disciples'<br>
+          <em>Walk.</em>
+        </h1>
+
+        <p>
+          Walking in their footsteps.<br>
+          Understanding their hearts.<br>
+          Sharing the Gospel.
+        </p>
+
+        <div class="buttons">
+          <a href="#join" class="btn btn-gold">
+            Join the Challenge ↗
+          </a>
+
+          <a href="#about" class="btn btn-outline">
+            Discover the Mission
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIVE LIVE STATISTICS COUNTERS -->
+
+    <section class="stats" id="progress">
+      <div class="container">
+
         <div class="eyebrow">Our journey together</div>
         <h2>Community Impact</h2>
-      </div>
-      <div class="live">
-        <span class="dot"></span>
-        <span id="live-label">Connecting to statistics...</span>
-      </div>
-    </div>
 
-    <div class="statgrid">
-      <div class="stat">
-        <strong id="approached">—</strong>
-        <small>People approached</small>
-      </div>
-      <div class="stat">
-        <strong id="conversations">—</strong>
-        <small>Conversations shared</small>
-      </div>
-      <div class="stat">
-        <strong id="interested">—</strong>
-        <small>Interested in joining</small>
-      </div>
-      <div class="stat">
-        <strong id="participants">—</strong>
-        <small>Registered participants</small>
-      </div>
-      <div class="stat">
-        <strong id="teams">—</strong>
-        <small>Participating teams</small>
-      </div>
-    </div>
+        <div class="stats-grid">
 
-    <p class="note" id="data-note">
-      Statistics are based on participant-submitted reports
-      and registrations. Updates may be delayed.
-      No individual response details are displayed.
-    </p>
-  </div>
-</section>
+          <div class="stat-card">
+            <span class="stat-number" id="approached">—</span>
+            <span class="stat-label">People Approached</span>
+          </div>
 
-<section class="section" id="about">
-  <div class="wrap">
-    <div class="sectionintro center">
-      <div class="eyebrow">Why we walk</div>
-      <h2>To understand the heart behind the mission.</h2>
-      <p>
-        Jesus’ disciples continued sharing the Gospel through adversity.
-        The Disciples’ Walk is a community challenge to reflect on
-        their faith, hear others’ perspectives, and learn to speak
-        about our own beliefs with courage, gentleness, and respect.
-      </p>
-    </div>
-    <div class="steps" id="how">
-      <div class="step">
-        <div class="number">01</div>
-        <h3>Approach</h3>
-        <p>
-          Start a respectful conversation. Ask permission to talk,
-          be considerate of others’ time, and accept a “no” graciously.
+          <div class="stat-card">
+            <span class="stat-number" id="conversations">—</span>
+            <span class="stat-label">Meaningful Conversations</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-number" id="interested">—</span>
+            <span class="stat-label">Interested in Joining</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-number" id="participants">—</span>
+            <span class="stat-label">Registered Participants</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-number" id="teams">—</span>
+            <span class="stat-label">Participating Teams</span>
+          </div>
+
+        </div>
+
+        <p class="status" id="stats-status">
+          Loading live statistics from Google Sheets...
         </p>
+
       </div>
-      <div class="step">
-        <div class="number">02</div>
-        <h3>Understand</h3>
-        <p>
-          Ask what gave the disciples courage. Listen openly to
-          people’s experiences, beliefs, and questions.
-        </p>
+    </section>
+
+    <section class="content" id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Why we walk</div>
+
+          <h2>Understanding the heart behind the mission.</h2>
+
+          <p>
+            The Disciples' Walk is a community challenge
+            inspired by the courage and faith of Jesus'
+            disciples. We seek to understand others,
+            build genuine connections, and share the
+            Gospel with gentleness and respect.
+          </p>
+        </div>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Approach</h3>
+            <p>
+              Begin a respectful conversation.
+              Be considerate of people's time and
+              always respect their choice not to talk.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Understand</h3>
+            <p>
+              Listen with genuine curiosity.
+              Seek to understand people's experiences,
+              perspectives, and questions.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Share</h3>
+            <p>
+              When welcomed, share your faith and
+              what the Gospel means to you with
+              compassion and respect.
+            </p>
+          </div>
+
+        </div>
       </div>
-      <div class="step">
-        <div class="number">03</div>
-        <h3>Share</h3>
-        <p>
-          When invited, share what Jesus and the Gospel mean to you.
-          Lead with compassion, never pressure.
-        </p>
+    </section>
+
+    <section class="verse">
+      <div class="container">
+        <div class="eyebrow">Our inspiration</div>
+
+        <blockquote>
+          "Always be prepared to give an answer …
+          with gentleness and respect."
+        </blockquote>
+
+        <p>1 PETER 3:15 · PARAPHRASED EXCERPT</p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="quote">
-  <div class="wrap">
-    <div class="eyebrow">Our inspiration</div>
-    <blockquote>
-      “Always be prepared to give an answer … with gentleness and respect.”
-    </blockquote>
-    <cite>1 PETER 3:15 · PARAPHRASED EXCERPT</cite>
-  </div>
-</section>
+    <section class="content join" id="join">
+      <div class="container join-grid">
 
-<section class="section" id="join">
-  <div class="wrap join">
-    <div>
-      <div class="eyebrow">Be part of the journey</div>
-      <h2>Every walk begins with a step.</h2>
-      <p>
-        Join a community learning from the disciples’ faith and courage.
-        You can participate individually or with a group,
-        share reflections, and help us understand the impact
-        of genuine conversations.
-      </p>
-      <p><span class="pill">Free to join · Everyone welcome</span></p>
-      <p>
-        For your safety, participate with a trusted group,
-        have conversations in public places, respect personal
-        boundaries, and avoid collecting strangers’ personal
-        details without their consent.
-      </p>
-    </div>
+        <div>
+          <div class="eyebrow">Be part of the journey</div>
 
-    <div class="joinpanel">
-      <h3>Join The Disciples’ Walk</h3>
-      <p>Become part of the challenge through our registration form.</p>
+          <h2>Every walk begins with a step.</h2>
 
-      <a class="btn dark"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSetazg5sAM3fMt8YzrnzzzqJSbPb104qr9M7M_DJLBf-7E2DA/viewform"
-         target="_blank" rel="noopener noreferrer">
-        Join the Walk ↗
-      </a>
+          <p>
+            Join The Disciples' Walk individually
+            or as part of a team. Together, we can
+            grow in faith, courage, and understanding.
+          </p>
 
-      <a class="reportlink"
-         href="https://docs.google.com/forms/d/e/1FAIpQLScaXYTC6Er7pl5tHB5B_XWXi_RyC6clbRnLk6YdQ59vVwj0_g/viewform"
-         target="_blank" rel="noopener noreferrer">
-        Report your progress →
-      </a>
+          <p>
+            Share your progress and help our community
+            see the impact of meaningful conversations.
+          </p>
+        </div>
 
-      <p class="hint">
-        Registration and reporting open securely in Google Forms.
-        This website does not collect form answers directly.
-      </p>
-    </div>
-  </div>
-</section>
+        <div class="join-card">
 
-<section class="section support" id="support">
-  <div class="wrap supportgrid">
-    <div>
-      <div class="eyebrow">Share the journey</div>
-      <h2>Help the walk reach further.</h2>
-      <p>
-        Support by sharing the challenge with friends,
-        posting your reflections, and encouraging thoughtful
-        conversations. Use <b>#TDW</b> and
-        <b>#TheDisciplesWalk</b>.
-      </p>
-      <div class="actions">
-        <button class="btn dark" id="share-btn">
-          Share this Challenge ↗
+          <h3>Join The Disciples' Walk</h3>
+
+          <p>
+            Register to participate in the challenge.
+          </p>
+
+          <a
+            class="btn btn-green"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSetazg5sAM3fMt8YzrnzzzqJSbPb104qr9M7M_DJLBf-7E2DA/viewform"
+            target="_blank"
+            rel="noopener noreferrer">
+            Join the Walk ↗
+          </a>
+
+          <p>Already participating?</p>
+
+          <a
+            class="report-link"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScaXYTC6Er7pl5tHB5B_XWXi_RyC6clbRnLk6YdQ59vVwj0_g/viewform"
+            target="_blank"
+            rel="noopener noreferrer">
+            Report Your Walk →
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="content support">
+      <div class="container">
+        <div class="eyebrow">Share the journey</div>
+
+        <h2>Help the walk reach further.</h2>
+
+        <p>#TDW &nbsp; #TheDisciplesWalk</p>
+
+        <button class="btn btn-green" id="share-btn">
+          Share This Challenge ↗
         </button>
-        <button class="btn" id="copy-btn">
-          Copy Hashtags
-        </button>
       </div>
-      <p class="hint" id="share-status" role="status"></p>
-    </div>
-    <div class="tag">#TDW.</div>
-  </div>
-</section>
+    </section>
 
-</main>
+  </main>
 
-<footer class="footer">
-  <div class="wrap footerin">
-    <div>
-      <a class="logo" href="#home">
-        The Disciples’ Walk<span>✦</span>
-      </a>
+  <footer>
+    <div class="container">
+      <div class="logo">The Disciples' Walk<span>✦</span></div>
+
       <p>
-        Walking in their footsteps. Understanding their hearts.
+        Walking in their footsteps.
+        Understanding their hearts.
         Sharing the Gospel.
       </p>
-      <p>© <span id="year"></span> The Disciples’ Walk.</p>
+
+      <p>© <span id="year"></span> The Disciples' Walk.</p>
     </div>
-    <div class="footlinks">
-      <a href="#about">About</a>
-      <a href="#progress">Progress</a>
-      <a href="#join">Join</a>
-      <a href="#support">Support</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-const STATS_CSV_URL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vT3qdu_Fwo4cwvz73nn_Fh82TS11w_uUc6G9UMliAntrbDpe6zob0QH1gVjZxNENqk6iraODT3hzYk4/pub?gid=0&single=true&output=csv';
+  <script>
+    // Published PUBLIC statistics spreadsheet only.
+    // Never use your private form-response spreadsheet here.
 
-const $ = id => document.getElementById(id);
+    const CSV_URL =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3qdu_Fwo4cwvz73nn_Fh82TS11w_uUc6G9UMliAntrbDpe6zob0QH1gVjZxNENqk6iraODT3hzYk4/pub?gid=0&single=true&output=csv";
 
-$('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-$('menu').addEventListener('click', () => {
-  const open = $('navlinks').classList.toggle('open');
-  $('menu').setAttribute('aria-expanded', String(open));
-});
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let field = "";
+      let inQuotes = false;
 
-document.querySelectorAll('.navlinks a').forEach(link => {
-  link.addEventListener('click', () => {
-    $('navlinks').classList.remove('open');
-    $('menu').setAttribute('aria-expanded', 'false');
-  });
-});
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
 
-function parseCSV(text) {
-  const rows = [];
-  let row = [];
-  let field = '';
-  let quoted = false;
-
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-
-    if (c === '"') {
-      if (quoted && text[i + 1] === '"') {
-        field += '"';
-        i++;
-      } else {
-        quoted = !quoted;
+        if (char === '"') {
+          if (inQuotes && text[i + 1] === '"') {
+            field += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === "," && !inQuotes) {
+          row.push(field);
+          field = "";
+        } else if (
+          (char === "\n" || char === "\r") && !inQuotes
+        ) {
+          if (char === "\r" && text[i + 1] === "\n") i++;
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = "";
+        } else {
+          field += char;
+        }
       }
-    } else if (c === ',' && !quoted) {
-      row.push(field);
-      field = '';
-    } else if ((c === '\n' || c === '\r') && !quoted) {
-      if (c === '\r' && text[i + 1] === '\n') i++;
-      row.push(field);
-      rows.push(row);
-      row = [];
-      field = '';
-    } else {
-      field += c;
-    }
-  }
 
-  if (field || row.length) {
-    row.push(field);
-    rows.push(row);
-  }
+      if (field !== "" || row.length > 0) {
+        row.push(field);
+        rows.push(row);
+      }
 
-  return rows;
-}
-
-async function loadStats() {
-  try {
-    const response = await fetch(
-      STATS_CSV_URL + '&refresh=' + Date.now(),
-      { cache: 'no-store' }
-    );
-
-    if (!response.ok) {
-      throw new Error('CSV request failed: ' + response.status);
+      return rows;
     }
 
-    const csv = await response.text();
-    const rows = parseCSV(csv);
-    const stats = {};
+    async function updateStatistics() {
+      const status = document.getElementById("stats-status");
 
-    for (const row of rows.slice(1)) {
-      if (row.length < 2) continue;
+      try {
+        const response = await fetch(
+          CSV_URL + "&refresh=" + Date.now(),
+          { cache: "no-store" }
+        );
 
-      const key = row[0].trim().toLowerCase();
-      const value = Number(row[1].trim());
+        if (!response.ok) {
+          throw new Error("Could not load statistics");
+        }
 
-      if (Number.isFinite(value) && value >= 0) {
-        stats[key] = Math.floor(value);
+        const csvText = await response.text();
+        const rows = parseCSV(csvText);
+
+        const mapping = {
+          "people approached": "approached",
+          "meaningful conversations": "conversations",
+          "interested in joining": "interested",
+          "registered participants": "participants",
+          "participating teams": "teams"
+        };
+
+        let updated = 0;
+
+        for (const row of rows) {
+          if (row.length < 2) continue;
+
+          const label = row[0].trim().toLowerCase();
+          const rawValue = row[1].trim();
+
+          const elementId = mapping[label];
+
+          if (!elementId) continue;
+
+          const value = Number(rawValue);
+
+          if (!Number.isFinite(value) || value < 0) {
+            continue;
+          }
+
+          document.getElementById(elementId).textContent =
+            Math.floor(value).toLocaleString();
+
+          updated++;
+        }
+
+        if (updated === 5) {
+          status.textContent =
+            "Live community statistics · Updated automatically";
+        } else {
+          status.textContent =
+            "Loaded " + updated + " of 5 statistics. " +
+            "Check the published Google Sheets CSV.";
+        }
+
+      } catch (error) {
+        console.error("TDW statistics error:", error);
+
+        status.textContent =
+          "Statistics temporarily unavailable. Please refresh later.";
       }
     }
 
-    const mappings = {
-      'people approached': 'approached',
-      'meaningful conversations': 'conversations',
-      'interested in joining': 'interested',
-      'registered participants': 'participants',
-      'participating teams': 'teams'
-    };
+    updateStatistics();
 
-    for (const [label, id] of Object.entries(mappings)) {
-      if (!(label in stats)) {
-        throw new Error('Missing statistic: ' + label);
-      }
-    }
+    // Refresh every 5 minutes.
+    setInterval(updateStatistics, 300000);
 
-    for (const [label, id] of Object.entries(mappings)) {
-      $(id).textContent = stats[label].toLocaleString();
-    }
+    document.getElementById("share-btn")
+      .addEventListener("click", async () => {
 
-    $('live-label').textContent =
-      'Community totals · updated regularly';
+        const shareData = {
+          title: "The Disciples' Walk",
+          text: "Join The Disciples' Walk! #TDW",
+          url: window.location.href
+        };
 
-    $('data-note').textContent =
-      'Statistics reflect participant-submitted outreach reports ' +
-      'and registrations. Google Sheets updates may be delayed. ' +
-      'People approached may be counted more than once across reports. ' +
-      'No individual response details are displayed.';
-
-  } catch (error) {
-    console.error('TDW statistics error:', error);
-    $('live-label').textContent =
-      'Statistics temporarily unavailable';
-  }
-}
-
-loadStats();
-setInterval(loadStats, 5 * 60 * 1000);
-
-$('copy-btn').addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText('#TDW #TheDisciplesWalk');
-    $('share-status').textContent = 'Hashtags copied!';
-  } catch {
-    $('share-status').textContent =
-      'Copy: #TDW #TheDisciplesWalk';
-  }
-});
-
-$('share-btn').addEventListener('click', async () => {
-  const data = {
-    title: 'The Disciples’ Walk',
-    text: 'Walking in their footsteps. Understanding their hearts. Sharing the Gospel.',
-    url: location.href
-  };
-
-  if (navigator.share) {
-    try {
-      await navigator.share(data);
-    } catch {}
-  } else {
-    try {
-      await navigator.clipboard.writeText(data.text + ' ' + data.url);
-      $('share-status').textContent = 'Website link copied!';
-    } catch {
-      $('share-status').textContent = data.url;
-    }
-  }
-});
-</script>
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (error) {
+            console.log("Share cancelled");
+          }
+        } else {
+          try {
+            await navigator.clipboard.writeText(
+              shareData.text + " " + shareData.url
+            );
+            alert("Website link copied!");
+          } catch (error) {
+            alert(window.location.href);
+          }
+        }
+      });
+  </script>
 
 </body>
 </html>
